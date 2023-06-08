@@ -1,0 +1,100 @@
+Angular
+-------
+*Retriving the Data*
+---   ---  ---  ---
+
+Creating a new file in home :
+
+cricket.ts
+----------
+
+export class cricketer{
+    name:any;
+    matches:any;
+    runs:any;
+    average:any;
+    fiftes:any;
+    hundreds:any;
+    best:any;
+}
+
+home.components.ts
+-------------------
+
+import { task } from './cricket';
+
+ cricket:cricketer[]=[
+    {
+      name:"Ms dhoni",
+      matches:300,
+      runs:10000,
+      average:50,
+      fiftes:75,
+      hundreds:54,
+      best:183
+    },
+    {
+      name:"virat kohli",
+      matches:400,
+      runs:15000,
+      average:55,
+      fiftes:65,
+      hundreds:74,
+      best:183
+    }, 
+    {
+      name:"SureshRaina",
+      matches:250,
+      runs:12000,
+      average:50.5,
+      fiftes:65,
+      hundreds:34,
+      best:128
+    }, 
+    {
+      name:"Yuvrajsing",
+      matches:200,
+      runs:11000,
+      average:45,
+      fiftes:65,
+      hundreds:44,
+      best:174
+    }
+  ]
+
+home.component.html
+--------------------
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Matches</th>
+        <th>Runs</th>
+        <th>Average</th>
+        <th>Fifties</th>
+        <th>Hundreds</th>
+        <th>Best Score</th>
+    </tr>
+    <tr *ngFor="let cric of cricket">
+        <td>{{cric.name}}</td>
+        <td>{{cric.matches}}</td>
+        <td>{{cric.runs}}</td>
+        <td>{{cric.average}}</td>
+        <td>{{cric.fiftes}}</td>
+        <td>{{cric.hundreds}}</td>
+        <td>{{cric.best}}</td>
+    </tr>
+</table>
+
+home.component.css
+-------------------
+table,tr,td{
+    border: 2px solid;
+    padding: 15px;
+}
+table{
+    border-collapse: collapse;
+    background-color: brown;
+    color: aqua;
+}
+
+
