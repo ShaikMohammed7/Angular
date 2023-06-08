@@ -21,7 +21,7 @@ export class cricketer{
 home.components.ts
 -------------------
 
-import { task } from './cricket';
+import { cricketer } from './cricket';
 
  cricket:cricketer[]=[
     {
